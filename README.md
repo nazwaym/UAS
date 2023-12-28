@@ -1,7 +1,5 @@
 ## 1.1 Latar Belakang
 
-https://github.com/nazwaym/UAS/blob/main/MazeGame.java
-
 Latar belakang dari proyek ini adalah memberikan wadah bagi saya untuk mengaplikasikan pengetahuan dan keterampilan yang telah saya kembangkan selama proses pembelajaran. Selama pengembangan game ini, saya telah memperoleh beragam pengalaman, seperti merancang konsep game, merancang antarmuka web, dan mengimplementasikan kode dalam bahasa pemrograman untuk menciptakan berbagai fitur dalam game. Dalam konteks saat ini, perkembangan teknologi dan pendidikan tidak dapat dipisahkan. Sebagai seorang mahasiswa, saya ingin berpartisipasi dalam upaya mengimplementasikan pelajaran yang sudahh saya pelajari atau membuat sebuah permainaan yang dapat bermanfaat dalam menggabungkan dunia pendidikan dan teknologi dalam proses pembelajaran anak-anak. Hal ini dikarenakan dalam zaman sekarang, pendidikan telah menjadi sangat canggih, dan sudah banyak permainan yang menggabungkan unsur pembelajaran, seperti permainan maze (labirin).
 
 Labirin adalah permainan yang umumnya berupa jaringan jalan yang rumit dan berliku-liku. Biasanya, labirin dibuat untuk tujuan hiburan, dan merupakan teka-teki dengan banyak jalan buntu. Tujuan dari permainan ini adalah bagi pemain untuk menemukan 4 koin dan menemukan kunci untuk pintu jalan keluarr, dengan catatan diberi waktu 2menit untuk menyelesaikan misi tersebut dan harus melewati rintangan.
@@ -44,6 +42,8 @@ player|   memeprhatikan waktu | waktu abis, permainan akan game over | ⭐⭐⭐
 <img width="337" alt="ss" src="https://github.com/nazwaym/UAS/assets/145254945/5c206cb0-f0bd-475f-b620-2eb7a99d49c0">
 <img width="290" alt="22" src="https://github.com/nazwaym/UAS/assets/145254945/c8b46d5b-63b4-4aa7-8589-58d21a9bd7d3">
 <img width="494" alt="33" src="https://github.com/nazwaym/UAS/assets/145254945/27769269-fa64-4e58-ab22-082d2317bd68">
+<img width="182" alt="Screenshot 2023-12-28 143110" src="https://github.com/nazwaym/UAS/assets/145254945/74ae2cbd-f4ef-4cf3-9f0e-c4a750138494">
+
 
 ## 7. Flowchart dari Algoritma
 
