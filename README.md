@@ -60,7 +60,13 @@ Dalam proses
    - Class
 
 ## 8. Link folder kode pemrogramn
-Dalam proses
+https://github.com/nazwaym/UAS/blob/main/MazeGame.java
+
+## 9. screenrecording
+https://drive.google.com/drive/folders/1VFxVG5kFP28jGWK3jOwSB8Bwlzucobtr
+
+
+
 
 # 2. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 
