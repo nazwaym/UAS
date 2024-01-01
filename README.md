@@ -70,6 +70,9 @@ https://github.com/nazwaym/UAS/blob/main/MazeGame.java
 ## 9. screenrecording
 https://drive.google.com/drive/folders/1VFxVG5kFP28jGWK3jOwSB8Bwlzucobtr
 
+## 10. visual game 
+visualgame.md
+
 
 
 
