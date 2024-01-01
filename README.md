@@ -37,7 +37,8 @@ player|   memeprhatikan waktu | waktu abis, permainan akan game over | ⭐⭐⭐
 ## 6. Desain ser Interface
 <img width="337" alt="ss" src="https://github.com/nazwaym/UAS/assets/145254945/5c206cb0-f0bd-475f-b620-2eb7a99d49c0">
 
-![maps](https://github.com/nazwaym/UAS/assets/145254945/024fa861-6be9-4cf6-99f2-e548f3e7c936)
+
+![1](https://github.com/nazwaym/UAS/assets/145254945/be8a9b92-3b54-42bf-9cf9-05159ba1bdd6)
 
 <img width="290" alt="22" src="https://github.com/nazwaym/UAS/assets/145254945/c8b46d5b-63b4-4aa7-8589-58d21a9bd7d3">
 <img width="494" alt="33" src="https://github.com/nazwaym/UAS/assets/145254945/27769269-fa64-4e58-ab22-082d2317bd68">
@@ -74,6 +75,7 @@ https://drive.google.com/drive/folders/1VFxVG5kFP28jGWK3jOwSB8Bwlzucobtr
 
 # 2. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 ## **A)class mazegame**
+
 public class MazeGame {
     public static void main(String[] args) {
         // Inisialisasi peta labirin
@@ -108,6 +110,7 @@ scanner: Objek Scanner digunakan untuk menerima input dari pengguna dengan tipe 
 game: Objek Game digunakan untuk memulai dan mengendalikan permainan.
 
 ## **B) class map**
+
 class Map {
     private char[][] maze;
 
@@ -157,6 +160,7 @@ getCols(): Mengembalikan jumlah kolom dalam peta.
 isValidMove(Tipe data : int row, int col): Memeriksa apakah langkah yang diambil pemain adalah langkah yang valid.
 
 **##C) Class Player**
+
 class Player {
     private int row;
     private int col;
