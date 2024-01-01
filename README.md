@@ -71,7 +71,7 @@ https://github.com/nazwaym/UAS/blob/main/MazeGame.java
 https://drive.google.com/drive/folders/1VFxVG5kFP28jGWK3jOwSB8Bwlzucobtr
 
 ## 10. visual game 
-visualgame.md
+[visualgame.md](https://github.com/nazwaym/UAS/blob/8eda75fd6b277fd709e7ae6e9541f898ee885dac/visualgame.md)
 
 
 
