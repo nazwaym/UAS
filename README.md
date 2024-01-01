@@ -69,29 +69,241 @@ https://drive.google.com/drive/folders/1VFxVG5kFP28jGWK3jOwSB8Bwlzucobtr
 
 
 # 2. Bagaimana konsep variable, data type dan operator pada bahasa pemrograman digunakan dalam pembuatan game ini ?
+## **A)class mazegame**
+public class MazeGame {
+    public static void main(String[] args) {
+        // Inisialisasi peta labirin
+        char[][] maze = {
+                { 'M', ' ', '#', '#', '#', '#', '#', '#', '#', '#', '#' },
+                { '#', ' ', '#', ' ', ' ', 'O', '#', ' ', 'O', ' ', '#' },
+                { '#', ' ', '#', '#', '#', ' ', '#', ' ', '#', ' ', '#' },
+                { '#', ' ', ' ', ' ', '#', ' ', 'V', ' ', ' ', '#', '#' },
+                { '#', '#', '#', ' ', '#', ' ', '#', ' ', '#', ' ', '#' },
+                { '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#' },
+                { '#', 'O', '#', '#', ' ', ' ', '#', '#', 'K', ' ', '#' },
+                { '#', ' ', ' ', ' ', 'V', ' ', ' ', '#', 'V', ' ', '#' },
+                { '#', ' ', '#', ' ', '#', '#', '#', ' ', '#', ' ', '#' },
+                { '#', ' ', '#', '#', '#', ' ', '#', ' ', ' ', ' ', '#' },
+                { '#', '#', '#', '#', '#', '#', '#', '#', '#', ' ', 'E' }
+        };
 
-Dalam pembuatan game ini, konsep variable, data type, dan operator pada bahasa pemrograman Java digunakan untuk mengelola informasi permainan, seperti posisi pemain, kondisi koin, kunci, dan elemen-elemen lainnya. Berikut adalah beberapa konsep yang digunakan:
+        // Inisialisasi objek Scanner untuk input pengguna
+        Scanner scanner = new Scanner(System.in);
 
-1. Variable dan Data Type:
-   - `maze`: Variabel array dua dimensi untuk menyimpan peta labirin. Tipe data char digunakan karena setiap sel pada peta direpresentasikan oleh karakter.
-   - `playerRow` dan `playerCol`: Variabel untuk menyimpan posisi pemain di peta labirin. Keduanya bertipe int.
-   - `coinsCollected`: Variabel untuk menyimpan jumlah koin yang dikumpulkan oleh pemain. Bertipe int.
-   - `hasKey`: Variabel boolean untuk menyimpan status apakah pemain sudah memiliki kunci atau belum.
-   - `move`: Variabel untuk menyimpan input arah gerakan dari pengguna. Bertipe char.
+        // Membuat objek Game dan memulai permainan
+        Game game = new Game(maze, scanner);
+        game.startGame();
 
-2. Operator:
-   - Operator `+`: Digunakan untuk menggabungkan string pada output pesan, seperti "Coins collected: " + coinsCollected.
-   - Operator `==`: Digunakan dalam beberapa pernyataan kondisional untuk memeriksa kesetaraan, misalnya dalam memeriksa isi sel pada peta (contoh: `cell == 'O'`).
-   - Operator `&&`: Digunakan dalam ekspresi kondisional (`isValidMove` method) untuk menggabungkan beberapa kondisi agar semua harus terpenuhi.
+        // Menutup objek Scanner setelah selesai menggunakan
+        scanner.close();
+    }
+}
+**Variabel dan Tipe data:** 
+maze: Mewakili peta labirin sebagai array dua dimensi dengan tipe data char[][].
+scanner: Objek Scanner digunakan untuk menerima input dari pengguna dengan tipe data Scanner.
+game: Objek Game digunakan untuk memulai dan mengendalikan permainan.
 
-3. Metode (Method):
-   - `printMaze`: Metode ini digunakan untuk menampilkan peta labirin ke konsol.
-   - `isValidMove`: Metode ini digunakan untuk memeriksa apakah gerakan pemain yang diinginkan adalah gerakan yang valid, yaitu tidak melewati batas peta atau sel yang diisi oleh karakter '#' (dinding).
+## **B) class map**
+class Map {
+    private char[][] maze;
 
-4. Loop dan Kontrol Alur:
-   - `while (true)`: Loop utama permainan yang terus berjalan sampai pemain menang atau kalah.
-   - `switch`: Digunakan untuk memproses input gerakan pemain dan mengubah posisi pemain berdasarkan input tersebut.
-   - Pernyataan kondisional (`if`, `else if`, `else`): Digunakan untuk menentukan aksi yang akan diambil berdasarkan isi sel pada peta (mengambil koin, menemui kunci, menemui pintu keluar, atau kalah karena menginjak virus).
+    public Map(char[][] maze) {
+        this.maze = maze;
+    }
+
+    public void printMap() {
+        for (char[] row : maze) {
+            for (char cell : row) {
+                System.out.print(cell + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public char getCell(int row, int col) {
+        return maze[row][col];
+    }
+
+    public void setCell(int row, int col, char value) {
+        maze[row][col] = value;
+    }
+
+    public int getRows() {
+        return maze.length;
+    }
+
+    public int getCols() {
+        return maze[0].length;
+    }
+
+    public boolean isValidMove(int row, int col) {
+        return row >= 0 && row < getRows() && col >= 0 && col < getCols() && getCell(row, col) != '#';
+    }
+}
+
+**Variabel dan Tipe data:** 
+maze: Mewakili peta labirin sebagai array dua dimensi dengan tipe data char[][].
+**Metode dan Konsep:**
+printMap(): Mencetak peta labirin ke konsol.
+getCell(Tipe data : int row, int col): Mengembalikan karakter pada posisi tertentu di peta.
+setCell(Tipe data : int row, int col, char value): Menetapkan nilai karakter pada posisi tertentu di peta.
+getRows(): Mengembalikan jumlah baris dalam peta.
+getCols(): Mengembalikan jumlah kolom dalam peta.
+isValidMove(Tipe data : int row, int col): Memeriksa apakah langkah yang diambil pemain adalah langkah yang valid.
+
+**##C) Class Player**
+class Player {
+    private int row;
+    private int col;
+    private int coinsCollected;
+    private boolean hasKey;
+
+    public Player(int row, int col) {
+        this.row = row;
+        this.col = col;
+        this.coinsCollected = 0;
+        this.hasKey = false;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public int getCoinsCollected() {
+        return coinsCollected;
+    }
+
+    public boolean hasKey() {
+        return hasKey;
+    }
+
+    public void collectCoin() {
+        coinsCollected++;
+    }
+
+    public void setHasKey() {
+        hasKey = true;
+    }
+}
+
+**Variabel dan Tipe data:** 
+row, col: Menyimpan posisi pemain dalam peta.
+coinsCollected: Menyimpan jumlah koin yang dikumpulkan.
+hasKey: Menyimpan informasi apakah pemain memiliki kunci atau tidak dengan tipe data boolean.
+**Metode dan Konsep:**
+getRow(), getCol(), getCoinsCollected(), hasKey(): Metode-metode getter untuk mendapatkan informasi tentang pemain.
+collectCoin(): Menambahkan jumlah koin yang dikumpulkan.
+setHasKey(): Menandai bahwa pemain memiliki kunci.
+
+**##d) class game:**
+
+class Game {
+    private Map map;
+    private Player player;
+    private Scanner scanner;
+
+    public Game(char[][] maze, Scanner scanner) {
+        this.map = new Map(maze);
+        this.player = new Player(0, 0);
+        this.scanner = scanner;
+    }
+
+    public void startGame() {
+        while (true) {
+            // Menampilkan peta labirin
+            map.printMap();
+
+            // Menampilkan pesan dan menerima input arah dari pengguna
+            System.out.println("Koin yang dikumpulkan: " + player.getCoinsCollected());
+            System.out.print("Pilih arah (W/A/S/D): ");
+            char move = scanner.next().charAt(0);
+
+            // Mengubah posisi pemain berdasarkan input
+            handleMove(move);
+
+            // Memeriksa sel di lokasi pemain dan melakukan tindakan sesuai dengan isi sel
+            char cell = map.getCell(player.getRow(), player.getCol());
+            handleCell(cell);
+
+            // Menempatkan pemain di lokasi baru
+            map.setCell(player.getRow(), player.getCol(), 'M');
+        }
+    }
+
+    private void handleMove(char move) {
+        int newRow = player.getRow();
+        int newCol = player.getCol();
+
+        switch (move) {
+            case 'W':
+                newRow--;
+                break;
+            case 'A':
+                newCol--;
+                break;
+            case 'S':
+                newRow++;
+                break;
+            case 'D':
+                newCol++;
+                break;
+        }
+
+        if (map.isValidMove(newRow, newCol)) {
+            map.setCell(player.getRow(), player.getCol(), ' '); // Menghapus pemain dari posisi sebelumnya
+            player = new Player(newRow, newCol);
+        }
+    }
+
+    private void handleCell(char cell) {
+        if (cell == 'O') {
+            System.out.println("Anda mengambil sebuah koin!");
+            player.collectCoin(); // Menambahkan coinsCollected
+            map.setCell(player.getRow(), player.getCol(), ' '); // Menghapus koin setelah diambil
+        } else if (cell == 'V') {
+            System.out.println("Anda menginjak virus! Game Over!");
+            System.exit(0);
+        } else if (cell == 'K') {
+            System.out.println("Anda berhasil mengambil kunci, silakan cari jalan keluar!");
+            map.setCell(player.getRow(), player.getCol(), ' ');
+            player.setHasKey();
+        } else if (cell == 'E') {
+            if (player.hasKey()) {
+                System.out.println("Selamat! Anda berhasil membuka pintu keluar!");
+                map.setCell(player.getRow(), player.getCol(), ' '); // Menghapus pemain setelah keluar
+            } else {
+                System.out.println("Anda belum memiliki kunci. Anda tidak bisa keluar!");
+            }
+            System.exit(0);
+        }
+    }
+}
+
+**Variabel dan Tipe data:** 
+map: Objek dari class Map yang merepresentasikan peta labirin.
+player: Objek dari class Player yang merepresentasikan pemain.
+scanner: Objek Scanner untuk menerima input dari pengguna.
+
+**Metode dan Konsep:**
+
+startGame(): Memulai permainan dengan perulangan while(true) untuk menampilkan peta, menerima input, dan meng-handle pergerakan pemain.
+handleMove(char move): Mengubah posisi pemain berdasarkan input arah.
+handleCell(char cell): Menangani sel di lokasi pemain dan menjalankan aksi sesuai dengan jenis sel tersebut.
+
+
+**Konsep Operator:**
+Pada Umumnya:
+
+Operator = untuk assignment, misalnya: this.maze = maze;.
+Operator == untuk perbandingan, misalnya: getCell(row, col) == '#';.
+Operator && untuk logika AND, misalnya: row >= 0 && row < getRows() && col >= 0 && col < getCols() && getCell(row, col) != '#';.
+Pada Class Game:Operator switch digunakan untuk memilih aksi berdasarkan input pengguna.
+
 
 # 3. Bagaimana konsep boolean dan conditions pada bahasa pemrograman digunakan dalam pembuatan game ini ?
 Konsep boolean dan kondisi digunakan dalam game Maze saya ini untuk mengatur alur permainan , dan membuat keputusan berdasarkan kondisi tertentu. Berikut adalah beberapa contoh penggunaan konsep tersebut dalam kode:
