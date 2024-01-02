@@ -32,7 +32,8 @@ player|  mengambil kunci | memenangkan permainan | ⭐⭐⭐⭐⭐
 player|   memeprhatikan waktu | waktu abis, permainan akan game over | ⭐⭐⭐⭐⭐
 
 ## 5. Struktur Data 
-<img width="310" alt="struktur" src="https://github.com/nazwaym/UAS/assets/145254945/011b4b7d-0cfb-4697-ac40-32bf51de4d9a">
+![class drawio](https://github.com/nazwaym/UAS/assets/145254945/6015d6f4-9075-4da4-9e6b-f0040f394012)
+
 
 ## 6. Desain ser Interface
 <img width="337" alt="ss" src="https://github.com/nazwaym/UAS/assets/145254945/5c206cb0-f0bd-475f-b620-2eb7a99d49c0">
@@ -51,7 +52,7 @@ player|   memeprhatikan waktu | waktu abis, permainan akan game over | ⭐⭐⭐
 ![flochart maze drawio](https://github.com/nazwaym/pdp_jobinterview.md/assets/145254945/fefa0be9-e132-4793-8920-d883bf94e9b2)
 
 ## 8. Link demo game di youtobe
-https://youtu.be/o8ozQe5qLXk?si=CdAKBOOhXLkC7z0M
+https://youtu.be/R_htdyJCHt0
 
 ## 9. Game menerapkan prinsip prisnip dasar pemrograman 
  - Variable
