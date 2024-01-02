@@ -29,6 +29,7 @@ public class MazeGame {
     }
 }
 
+// Mewakili peta labirin
 class Map {
     private char[][] maze;
 
@@ -36,6 +37,7 @@ class Map {
         this.maze = maze;
     }
 
+    // Menampilkan keadaan terkini peta
     public void printMap() {
         for (char[] row : maze) {
             for (char cell : row) {
@@ -46,27 +48,33 @@ class Map {
         System.out.println();
     }
 
+    // Mendapatkan nilai sebuah sel pada baris dan kolom tertentu
     public char getCell(int row, int col) {
         return maze[row][col];
     }
 
+        // Menetapkan nilai sebuah sel pada baris dan kolom tertentu
     public void setCell(int row, int col, char value) {
         maze[row][col] = value;
     }
 
+      // Mendapatkan jumlah baris pada peta
     public int getRows() {
         return maze.length;
     }
 
+     // Mendapatkan jumlah kolom pada peta
     public int getCols() {
         return maze[0].length;
     }
 
+    // Memeriksa apakah langkah ke sel tertentu valid
     public boolean isValidMove(int row, int col) {
         return row >= 0 && row < getRows() && col >= 0 && col < getCols() && getCell(row, col) != '#';
     }
 }
 
+// Mewakili pemain dalam permainan
 class Player {
     private int row;
     private int col;
@@ -80,31 +88,39 @@ class Player {
         this.hasKey = false;
     }
 
+     // Mendapatkan baris saat ini pemain
     public int getRow() {
         return row;
     }
 
+    // Mendapatkan kolom saat ini pemain
     public int getCol() {
         return col;
     }
 
+    // Mendapatkan jumlah koin yang dikumpulkan pemain
     public int getCoinsCollected() {
         return coinsCollected;
     }
 
+    
+    // Memeriksa apakah pemain memiliki kunci
     public boolean hasKey() {
         return hasKey;
     }
 
+    // Menambah jumlah koin yang dikumpulkan pemain
     public void collectCoin() {
         coinsCollected++;
     }
 
+     // Menetapkan pemain memiliki kunci
     public void setHasKey() {
         hasKey = true;
     }
 }
 
+// Mewakili logika dan alur permainan
 class Game {
     private Map map;
     private Player player;
@@ -116,6 +132,7 @@ class Game {
         this.scanner = scanner;
     }
 
+     // Memulai loop permainan
     public void startGame() {
         while (true) {
             // Menampilkan peta labirin
@@ -138,6 +155,7 @@ class Game {
         }
     }
 
+    // Mengubah posisi pemain berdasarkan input gerakan
     private void handleMove(char move) {
         int newRow = player.getRow();
         int newCol = player.getCol();
@@ -156,13 +174,14 @@ class Game {
                 newCol++;
                 break;
         }
-
+        // Memeriksa apakah gerakan valid dan memperbarui posisi pemain
         if (map.isValidMove(newRow, newCol)) {
             map.setCell(player.getRow(), player.getCol(), ' '); // Menghapus pemain dari posisi sebelumnya
             player = new Player(newRow, newCol);
         }
     }
 
+     // Melakukan tindakan berdasarkan isi sel di lokasi pemain
     private void handleCell(char cell) {
         if (cell == 'O') {
             System.out.println("Anda mengambil sebuah koin!");
