@@ -51,7 +51,7 @@ player|   memeprhatikan waktu | waktu abis, permainan akan game over | ⭐⭐⭐
 ![flochart maze drawio](https://github.com/nazwaym/pdp_jobinterview.md/assets/145254945/fefa0be9-e132-4793-8920-d883bf94e9b2)
 
 ## 8. Link demo game di youtobe
-Dalam proses
+https://youtu.be/o8ozQe5qLXk?si=CdAKBOOhXLkC7z0M
 
 ## 9. Game menerapkan prinsip prisnip dasar pemrograman 
  - Variable
